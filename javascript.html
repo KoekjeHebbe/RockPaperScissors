@@ -6,7 +6,51 @@
 </head>
 <body>
   <script>
-    console.log("waddup world");
+    function getComputerchoice(){
+      let ComputerChoice = Math.floor(Math.random() * 3 + 1);
+        if (ComputerChoice === 1) {
+        return "Paper"
+      } else if (ComputerChoice === 2) {
+        return "Rock"
+      } else {
+        return "Scissors"
+      }
+    };
+
+    function playRound(computerSelection,playerSelection){
+      console.log(computerSelection)
+      console.log(playerSelection)
+      if (computerSelection === "Paper" && playerSelection === "rock"){
+        return "You lose"
+      }
+      if (computerSelection === "Paper" && playerSelection === "paper"){
+        return "Draw!"
+      }
+      if (computerSelection === "Paper" && playerSelection === "scissors"){
+        return "You win"
+      }
+      if (computerSelection === "Rock" && playerSelection === "rock"){
+        return "Draw!"
+      }
+      if (computerSelection === "Rock" && playerSelection === "paper"){
+        return "You win"
+      }
+      if (computerSelection === "Rock" && playerSelection === "scissors"){
+        return "You lose"
+      }
+      if (computerSelection === "Scissors" && playerSelection === "rock"){
+        return "You win"
+      }
+      if (computerSelection === "Scissors" && playerSelection === "paper"){
+        return "You lose"
+      }
+      if (computerSelection === "Scissors" && playerSelection === "scissors"){
+        return "Draw!"
+      }
+    }
+    const playerSelection = ("rOck".toLowerCase());
+    const computerSelection = getComputerchoice();
+    console.log(playRound(computerSelection, playerSelection));
   </script>
 </body>
 </html>
