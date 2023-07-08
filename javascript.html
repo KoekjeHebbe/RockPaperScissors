@@ -17,45 +17,58 @@
       }
     };
 
+    const playerSelection = prompt();
+    const computerSelection = getComputerchoice();
+    let score = 0;
+
     function playRound(computerSelection,playerSelection){
       console.log(computerSelection)
       console.log(playerSelection)
       if (computerSelection === "Paper" && playerSelection === "rock"){
         return "You lose"
+        score--;
       }
       if (computerSelection === "Paper" && playerSelection === "paper"){
         return "Draw!"
       }
       if (computerSelection === "Paper" && playerSelection === "scissors"){
         return "You win"
+        score = +1;
       }
       if (computerSelection === "Rock" && playerSelection === "rock"){
         return "Draw!"
       }
       if (computerSelection === "Rock" && playerSelection === "paper"){
         return "You win"
+        score = +1;
       }
       if (computerSelection === "Rock" && playerSelection === "scissors"){
         return "You lose"
+        score--;
       }
       if (computerSelection === "Scissors" && playerSelection === "rock"){
         return "You win"
+        score = +1;
       }
       if (computerSelection === "Scissors" && playerSelection === "paper"){
         return "You lose"
+        score--;
       }
       if (computerSelection === "Scissors" && playerSelection === "scissors"){
         return "Draw!"
       }
     }
+
     function game(){
       for (let i = 0; i < 5; i++) {
-      playRound
+        console.log(playRound(computerSelection, playerSelection));
       }
+      console.log(score)
     }
-    const playerSelection = ("rOck".toLowerCase());
-    const computerSelection = getComputerchoice();
+
+    
     console.log(playRound(computerSelection, playerSelection));
+    console.log(game());
   </script>
 </body>
 </html>
