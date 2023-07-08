@@ -6,6 +6,7 @@
 </head>
 <body>
   <script>
+
     function getComputerchoice(){
       let ComputerChoice = Math.floor(Math.random() * 3 + 1);
         if (ComputerChoice === 1) {
@@ -25,50 +26,61 @@
       console.log(computerSelection)
       console.log(playerSelection)
       if (computerSelection === "Paper" && playerSelection === "rock"){
-        return "You lose"
-        score--;
+        score -= 1;
+        return "You lose";
       }
       if (computerSelection === "Paper" && playerSelection === "paper"){
-        return "Draw!"
+        return "Draw!";
       }
       if (computerSelection === "Paper" && playerSelection === "scissors"){
-        return "You win"
-        score = +1;
+        score += 1;
+        return "You win";
       }
       if (computerSelection === "Rock" && playerSelection === "rock"){
-        return "Draw!"
+        return "Draw!";
       }
       if (computerSelection === "Rock" && playerSelection === "paper"){
-        return "You win"
-        score = +1;
+        score += 1;
+        return "You win";
       }
       if (computerSelection === "Rock" && playerSelection === "scissors"){
-        return "You lose"
-        score--;
+        score -= 1;
+        return "You lose";
       }
       if (computerSelection === "Scissors" && playerSelection === "rock"){
-        return "You win"
-        score = +1;
+        score += 1;
+        return "You win";
       }
       if (computerSelection === "Scissors" && playerSelection === "paper"){
-        return "You lose"
-        score--;
+        score -= 1;
+        return "You lose";
       }
       if (computerSelection === "Scissors" && playerSelection === "scissors"){
-        return "Draw!"
+        return "Draw!";
       }
     }
 
     function game(){
       for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerchoice();
         console.log(playRound(computerSelection, playerSelection));
       }
-      console.log(score)
+      
     }
 
-    
-    console.log(playRound(computerSelection, playerSelection));
+    function alertScore(){
+      if (score == 0){
+        return "It's a draw!"
+      } else if (score > 0){
+      return "You win little bitchboi!"
+    } else if (score < 0){
+    return "You lose soiboiii!"
+  }
+};
     console.log(game());
+    console.log(score);
+    alert(alertScore());
+
   </script>
 </body>
 </html>
