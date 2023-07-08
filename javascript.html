@@ -48,6 +48,11 @@
         return "Draw!"
       }
     }
+    function game(){
+      for (let i = 0; i < 5; i++) {
+      playRound
+      }
+    }
     const playerSelection = ("rOck".toLowerCase());
     const computerSelection = getComputerchoice();
     console.log(playRound(computerSelection, playerSelection));
