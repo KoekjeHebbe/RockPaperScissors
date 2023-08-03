@@ -29,7 +29,8 @@
 
     let playerSelection;
     const computerSelection = getComputerchoice();
-    let score = 0;
+    let playerScore = 0;
+    let pcScore = 0;
 
     function clicked(btn){      
       playerSelection = btn;
@@ -40,33 +41,33 @@
       console.log(computerSelection)
       console.log(playerSelection)
       if (computerSelection === "Paper" && playerSelection === "Rock"){
-        score -= 1;
+        pcScore += 1;
         return "You lose";
       }
       if (computerSelection === "Paper" && playerSelection === "Paper"){
         return "Draw!";
       }
       if (computerSelection === "Paper" && playerSelection === "Scissors"){
-        score += 1;
+        playerScore += 1;
         return "You win";
       }
       if (computerSelection === "Rock" && playerSelection === "Rock"){
         return "Draw!";
       }
       if (computerSelection === "Rock" && playerSelection === "Paper"){
-        score += 1;
+        playerScore += 1;
         return "You win";
       }
       if (computerSelection === "Rock" && playerSelection === "Scissors"){
-        score -= 1;
+        pcScore += 1;
         return "You lose";
       }
       if (computerSelection === "Scissors" && playerSelection === "Rock"){
-        score += 1;
+        playerScore += 1;
         return "You win";
       }
       if (computerSelection === "Scissors" && playerSelection === "Paper"){
-        score -= 1;
+        pcScore += 1;
         return "You lose";
       }
       if (computerSelection === "Scissors" && playerSelection === "Scissors"){
@@ -77,14 +78,14 @@
     function game(){
         const computerSelection = getComputerchoice();
         console.log(playRound(computerSelection, playerSelection));
-        console.log(score);
+        //console.log(score);
         const results = document.querySelector('#results');
-          results.textContent = (`${score}`);
-        if (score === 5){
+          results.textContent = (`Your score = ${playerScore} & the computers' score = ${pcScore}`);
+        if (playerScore === 5){
           const results = document.querySelector('#results');
           results.textContent = 'You are the glorious winner!';
         }
-        if (score === -5){
+        if (pcScore === 5){
           const results = document.querySelector('#results');
           results.textContent = 'You are the unfortunate loser!';
         }
@@ -107,7 +108,7 @@
   
 };
     //console.log(game());
-    console.log(score);
+    //console.log(score);
     //alertScore();
 
   </script>
